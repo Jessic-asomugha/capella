@@ -219,12 +219,6 @@ export default function ServicesTab({ setActiveTab }: ServicesTabProps) {
             >
               Request a Custom Quote
             </button>
-            <button
-              onClick={() => setActiveTab("ENERGY_HUB")}
-              className="px-8 py-4 bg-transparent hover:bg-slate-800 text-white font-sans font-bold text-xs uppercase tracking-widest rounded-none border border-slate-700 cursor-pointer transition-colors duration-150"
-            >
-              Estimate Fuel Demand
-            </button>
           </div>
         </div>
       </div>

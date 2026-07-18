@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Phone, Mail, Menu, X, Cpu, Landmark, ShieldCheck, Zap } from "lucide-react";
+import { Phone, Mail, Menu, X, Landmark, ShieldCheck, Zap } from "lucide-react";
 import { ActiveTab } from "../types";
 
 interface NavbarProps {
@@ -80,32 +80,10 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
             </button>
           ))}
 
-          {/* AI Energy Hub Trigger Button */}
-          <button
-            id="nav-ai-hub-btn"
-            onClick={() => setActiveTab("ENERGY_HUB")}
-            className={`flex items-center gap-1.5 px-6 py-2.5 rounded-none font-sans font-bold text-xs tracking-widest uppercase transition-all border ${
-              activeTab === "ENERGY_HUB"
-                ? "bg-slate-900 border-slate-900 text-white"
-                : "bg-white border-slate-200 text-slate-700 hover:border-slate-900 hover:text-slate-900"
-            }`}
-          >
-            <Cpu className="w-3.5 h-3.5" />
-            <span>AI Energy Hub</span>
-          </button>
         </nav>
 
         {/* Mobile menu hamburger icon */}
         <div className="md:hidden flex items-center gap-3">
-          <button
-            id="mobile-ai-hub-badge"
-            onClick={() => setActiveTab("ENERGY_HUB")}
-            className="flex items-center justify-center p-2 rounded-none border border-slate-200 text-slate-700"
-            title="AI Energy Hub"
-          >
-            <Cpu className="w-4 h-4" />
-          </button>
-          
           <button
             id="hamburger-menu-btn"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -137,18 +115,6 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
                 {item.label}
               </button>
             ))}
-
-            <button
-              id="mobile-nav-ai-hub-btn"
-              onClick={() => {
-                setActiveTab("ENERGY_HUB");
-                setIsMobileMenuOpen(false);
-              }}
-              className="w-full mt-3 flex items-center justify-center gap-2 px-4 py-3 rounded-none bg-slate-900 text-white font-sans font-bold text-xs uppercase tracking-widest cursor-pointer"
-            >
-              <Cpu className="w-4 h-4" />
-              <span>AI Energy Hub</span>
-            </button>
           </div>
         </div>
       )}

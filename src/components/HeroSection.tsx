@@ -45,14 +45,6 @@ export default function HeroSection({ setActiveTab }: HeroSectionProps) {
               <span>Request a Quote</span>
               <ArrowRight className="w-4 h-4" />
             </button>
-            <button
-              id="hero-try-ai-hub-btn"
-              onClick={() => setActiveTab("ENERGY_HUB")}
-              className="w-full sm:w-auto px-8 py-4 border border-slate-200 hover:border-slate-900 bg-white text-slate-900 font-sans font-bold text-xs tracking-widest uppercase rounded-none transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
-            >
-              <Cpu className="w-4 h-4 text-slate-900" />
-              <span>Try AI Energy Hub</span>
-            </button>
           </div>
 
           {/* Social proof trust row */}

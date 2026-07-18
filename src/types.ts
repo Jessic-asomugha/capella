@@ -1,4 +1,4 @@
-export type ActiveTab = "HOME" | "ABOUT" | "SERVICES" | "CONTACT" | "ENERGY_HUB";
+export type ActiveTab = "HOME" | "ABOUT" | "SERVICES" | "CONTACT";
 
 export interface QuoteFormData {
   name: string;
@@ -12,27 +12,7 @@ export interface QuoteFormData {
   message: string;
 }
 
-export interface EstimatorInput {
-  generatorKva: string;
-  runningHoursPerDay: string;
-  businessType: string;
-  averageLoad: string;
-  daysOfBackupNeeded: string;
-}
 
-export interface EstimatorResult {
-  hourlyConsumption: number;
-  dailyConsumption: number;
-  totalCalculated: number;
-  tankRecommendation: number;
-}
-
-export interface ChatMessage {
-  id: string;
-  role: "user" | "assistant";
-  content: string;
-  timestamp: string;
-}
 
 export interface QuoteSubmissionResult {
   id: string;

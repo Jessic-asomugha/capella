@@ -1,6 +1,5 @@
 {
   "name": "Capella Logistics & Energy",
-  "description": "Premium diesel supply, energy solutions, and logistics based in Abuja, Nigeria. Featuring the AI Energy Hub for smart fuel demand estimation and expert advisory.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "description": "Premium diesel supply, energy solutions, and logistics based in Abuja, Nigeria.",
+  "requestFramePermissions": []
 }

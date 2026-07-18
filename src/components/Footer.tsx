@@ -43,10 +43,10 @@ export default function Footer({ setActiveTab }: FooterProps) {
               <div className="w-8 h-8 border border-slate-750 flex items-center justify-center rounded-none text-white">
                 <Zap className="w-4 h-4" />
               </div>
-              <span className="font-display uppercase tracking-widest text-xs">AI Power Advisory</span>
+              <span className="font-display uppercase tracking-widest text-xs">24/7 Support</span>
             </div>
             <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
-              Optimize backup operations with Capella's smart estimators, technical audits, and automated energy advisory resources.
+              Round-the-clock delivery tracking and emergency response for critical facilities that can't afford downtime.
             </p>
           </div>
         </div>
@@ -100,12 +100,6 @@ export default function Footer({ setActiveTab }: FooterProps) {
               <button onClick={() => setActiveTab("CONTACT")} className="hover:text-white text-slate-400 transition-colors flex items-center gap-1.5 group">
                 <ChevronRight className="w-3 h-3 text-slate-700 group-hover:text-white transition-colors" />
                 <span>Contact & Quote</span>
-              </button>
-            </li>
-            <li>
-              <button onClick={() => setActiveTab("ENERGY_HUB")} className="hover:text-white text-slate-400 transition-colors flex items-center gap-1.5 group">
-                <ChevronRight className="w-3 h-3 text-slate-700 group-hover:text-white transition-colors" />
-                <span className="text-white">AI Energy Hub</span>
               </button>
             </li>
           </ul>

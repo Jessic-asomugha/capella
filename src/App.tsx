@@ -6,7 +6,6 @@ import HeroSection from "./components/HeroSection";
 import AboutTab from "./components/AboutTab";
 import ServicesTab from "./components/ServicesTab";
 import ContactTab from "./components/ContactTab";
-import AIEnergyHub from "./components/AIEnergyHub";
 import { ShieldCheck, Calendar, Clock, Landmark, Sparkles, Building, Hammer, Factory, Zap, HelpCircle } from "lucide-react";
 
 export default function App() {
@@ -91,7 +90,7 @@ export default function App() {
                   <div className="hidden md:block absolute top-10 left-[10%] right-[10%] h-0.5 bg-gray-200 z-0"></div>
 
                   {[
-                    { num: "01", title: "Submit Request", desc: "Provide generator specifications via our Quote Form or AI Estimator." },
+                    { num: "01", title: "Submit Request", desc: "Provide generator specifications via our Quote Form." },
                     { num: "02", title: "Technical Audit", desc: "Our coordinators confirm volume requirements, access constraints, and timing." },
                     { num: "03", title: "Metered Delivery", desc: "Our tracked tanker discharges fuel with double-filtration and digital ticketing." },
                     { num: "04", title: "Zero Downtime", desc: "Your primary backup generator remains completely protected and energized." }
@@ -212,13 +211,7 @@ export default function App() {
                   >
                     Request custom Quote
                   </button>
-                  <button
-                    onClick={() => setActiveTab("ENERGY_HUB")}
-                    className="px-8 py-4 bg-amber-500 hover:bg-amber-600 text-slate-950 font-sans font-bold text-xs uppercase tracking-wider rounded-lg shadow-md flex items-center justify-center gap-2"
-                  >
-                    <Sparkles className="w-4 h-4 text-slate-950" />
-                    <span>Open AI Energy Hub</span>
-                  </button>
+
                 </div>
               </div>
             </section>
@@ -229,7 +222,6 @@ export default function App() {
         {activeTab === "SERVICES" && <ServicesTab setActiveTab={setActiveTab} />}
         {activeTab === "ABOUT" && <AboutTab setActiveTab={setActiveTab} />}
         {activeTab === "CONTACT" && <ContactTab setActiveTab={setActiveTab} />}
-        {activeTab === "ENERGY_HUB" && <AIEnergyHub />}
       </main>
 
       {/* Universal Sticky Footer */}
