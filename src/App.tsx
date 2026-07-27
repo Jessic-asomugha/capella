@@ -6,7 +6,7 @@ import HeroSection from "./components/HeroSection";
 import AboutTab from "./components/AboutTab";
 import ServicesTab from "./components/ServicesTab";
 import ContactTab from "./components/ContactTab";
-import { ShieldCheck, Landmark, Building, Hammer, Factory, Zap, Truck, ArrowRight } from "lucide-react";
+import { Zap, Hammer, Factory, Building, ShieldCheck, Landmark, Truck, ArrowRight, CircleCheck as CheckCircle } from "lucide-react";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>("HOME");
@@ -15,162 +15,123 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [activeTab]);
 
-  const industryGroups = [
-    [
-      { title: "Oil & Gas", desc: "Comprehensive logistics and supply solutions for petroleum operations.", icon: Zap },
-      { title: "Construction Companies", desc: "Direct on-site deliveries fueling heavy equipment and generator banks.", icon: Hammer },
-      { title: "Manufacturing Industries", desc: "Scheduled bulk supplies matching complex production duty cycles.", icon: Factory },
-      { title: "Hotels & Hospitality", desc: "Continuous supply protecting guest comfort and HVAC systems.", icon: Building },
-    ],
-    [
-      { title: "Hospitals & Healthcare", desc: "Reliable power for critical medical facilities and life-support systems.", icon: ShieldCheck },
-      { title: "Schools & Universities", desc: "Educational institutions requiring consistent backup power solutions.", icon: Landmark },
-      { title: "Government Agencies", desc: "Public sector organizations with high-security and reliability requirements.", icon: Building },
-      { title: "Telecommunications", desc: "Network infrastructure requiring uninterrupted power supply.", icon: Zap },
-    ],
-    [
-      { title: "Logistics Companies", desc: "Transport and distribution hubs requiring efficient fuel management.", icon: Truck },
-      { title: "Estates & Residences", desc: "Gated communities and luxury residential complexes.", icon: Building },
-      { title: "Supermarkets & Malls", desc: "Retail centers with high energy consumption needs.", icon: Factory },
-      { title: "Banks & Financial", desc: "Financial institutions requiring secure and reliable power.", icon: Landmark },
-    ],
-    [
-      { title: "Restaurants", desc: "Food service establishments requiring consistent power for operations.", icon: Building },
-      { title: "Agricultural Companies", desc: "Farming and agribusiness operations with energy-intensive needs.", icon: Factory },
-      { title: "Mining Companies", desc: "Extractive industries requiring heavy equipment power solutions.", icon: Hammer },
-      { title: "Churches & Religious", desc: "Places of worship requiring reliable backup power systems.", icon: Landmark },
-    ],
+  const industries = [
+    { title: "Oil & Gas",          desc: "Logistics and supply for petroleum operations.",                icon: Zap     },
+    { title: "Construction",       desc: "On-site deliveries for heavy equipment and generators.",        icon: Hammer  },
+    { title: "Manufacturing",      desc: "Scheduled bulk supply matching production cycles.",             icon: Factory },
+    { title: "Hotels & Hospitality", desc: "Continuous supply protecting guest comfort and HVAC.",         icon: Building },
+    { title: "Hospitals",          desc: "Reliable power for critical medical facilities.",               icon: ShieldCheck },
+    { title: "Schools",            desc: "Consistent backup power for educational institutions.",         icon: Landmark },
+    { title: "Telecommunications", desc: "Network infrastructure requiring uninterrupted power.",         icon: Zap     },
+    { title: "Logistics",          desc: "Transport hubs requiring efficient fuel management.",            icon: Truck   },
+    { title: "Estates",            desc: "Gated communities and luxury residential complexes.",           icon: Building },
+    { title: "Supermarkets",       desc: "Retail centers with high energy consumption.",                  icon: Factory },
+    { title: "Banks",              desc: "Financial institutions requiring secure power.",                icon: Landmark },
+    { title: "Mining",             desc: "Extractive industries with heavy equipment power needs.",       icon: Hammer  },
+  ];
+
+  const workflow = [
+    { num: "01", title: "Submit Request",   desc: "Provide generator specs via our quote form." },
+    { num: "02", title: "Technical Audit",  desc: "We confirm volume, access, and timing." },
+    { num: "03", title: "Metered Delivery", desc: "Tracked tanker discharges fuel with digital ticketing." },
+    { num: "04", title: "Zero Downtime",    desc: "Your generator stays protected and energized." },
+  ];
+
+  const whyUs = [
+    { title: "Triple Filtration Pipeline", desc: "Fuel is filtered at terminal collection, tanker loading, and final discharge to eradicate water and rust sediments." },
+    { title: "Meter Verification Security", desc: "Delivery trucks feature sealed positive-displacement meters alongside manual dip measurements to confirm exact volume." },
+    { title: "Federal Regulatory Compliance", desc: "Fully registered and licensed with NMDPRA for maximum peace of mind." },
   ];
 
   return (
-    <div id="app-root" className="min-h-screen bg-white text-brand-800 flex flex-col font-sans">
+    <div className="min-h-screen bg-white text-mat-dark-800 flex flex-col font-sans">
       <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
 
       <main className="flex-grow">
         {activeTab === "HOME" && (
-          <div id="home-view" className="animate-fade-in">
+          <div className="animate-[mat-fade-up_0.6s_ease]">
             <HeroSection setActiveTab={setActiveTab} />
 
-            {/* Who We Serve */}
-            <section id="who-we-serve" className="py-20 bg-white">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-                <div className="text-center max-w-3xl mx-auto space-y-3">
-                  <div className="flex items-center gap-3 justify-center">
-                    <div className="w-8 h-[2px] bg-amber-450"></div>
-                    <span className="font-mono text-xs font-semibold tracking-[0.2em] uppercase text-amber-600">
-                      Target Industries
-                    </span>
-                    <div className="w-8 h-[2px] bg-amber-450"></div>
-                  </div>
-                  <h2 className="font-display text-3xl sm:text-4xl font-bold text-brand-900 tracking-tight">
+            {/* ── Who We Serve ── */}
+            <section className="py-24 bg-white">
+              <div className="max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="text-center max-w-2xl mx-auto mb-16">
+                  <p className="mat-eyebrow font-display font-bold text-xs uppercase tracking-[0.22em] text-mat-blue-600 mx-auto items-center">
+                    Target Industries
+                  </p>
+                  <h2 className="font-display font-black text-4xl sm:text-5xl text-mat-dark-800 mt-5 tracking-tight leading-tight">
                     Who We Serve
                   </h2>
-                  <p className="text-brand-600 text-sm leading-relaxed max-w-2xl mx-auto">
-                    Capella Integrated Global serves diverse industries across Abuja (FCT), Kaduna, Nasarawa, Niger State, and Kogi. International partnerships available upon request.
+                  <p className="font-sans text-mat-dark-400 text-sm mt-4 leading-relaxed">
+                    Across Abuja (FCT), Kaduna, Nasarawa, Niger State, and Kogi.
                   </p>
                 </div>
 
-                {industryGroups.map((group, gIdx) => (
-                  <div key={gIdx} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {group.map((industry, idx) => {
-                      const Icon = industry.icon;
-                      return (
-                        <div
-                          key={idx}
-                          className="bg-brand-50/60 p-6 rounded-xl border border-brand-100 flex flex-col gap-4 hover:shadow-md hover:bg-white hover:border-brand-200 transition-all duration-300 group"
-                        >
-                          <div className="w-11 h-11 bg-amber-450/10 text-amber-600 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-amber-450 group-hover:text-white transition-colors">
-                            <Icon className="w-5 h-5" />
-                          </div>
-                          <div>
-                            <h3 className="font-display font-semibold text-brand-900 text-base mb-1.5">{industry.title}</h3>
-                            <p className="text-xs text-brand-600 leading-relaxed">{industry.desc}</p>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* How It Works - with background image */}
-            <section id="how-it-works" className="relative py-20 overflow-hidden">
-              <div className="absolute inset-0">
-                <img
-                  src="/src/assets/images/oil_gas_logistics_1784144502095.jpg"
-                  alt=""
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-brand-950/92"></div>
-              </div>
-              <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-                <div className="text-center max-w-3xl mx-auto space-y-3">
-                  <div className="flex items-center gap-3 justify-center">
-                    <div className="w-8 h-[2px] bg-amber-450"></div>
-                    <span className="font-mono text-xs font-semibold tracking-[0.2em] uppercase text-amber-450">
-                      Streamlined Logistics
-                    </span>
-                    <div className="w-8 h-[2px] bg-amber-450"></div>
-                  </div>
-                  <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
-                    Our Delivery Workflow
-                  </h2>
-                  <p className="text-brand-300 text-sm leading-relaxed max-w-2xl mx-auto">
-                    How Capella guarantees uncompromised fuel delivery from terminal loading directly to your storage nozzles.
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
-                  <div className="hidden md:block absolute top-11 left-[12%] right-[12%] h-0.5 bg-brand-700/60 z-0"></div>
-
-                  {[
-                    { num: "01", title: "Submit Request", desc: "Provide generator specifications via our Quote Form." },
-                    { num: "02", title: "Technical Audit", desc: "Our coordinators confirm volume requirements, access constraints, and timing." },
-                    { num: "03", title: "Metered Delivery", desc: "Our tracked tanker discharges fuel with double-filtration and digital ticketing." },
-                    { num: "04", title: "Zero Downtime", desc: "Your primary backup generator remains completely protected and energized." },
-                  ].map((step, idx) => (
-                    <div key={idx} className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-brand-800 relative z-10 text-center space-y-3 hover:bg-white/10 transition-colors">
-                      <div className="w-12 h-12 bg-amber-450 rounded-full flex items-center justify-center text-brand-950 font-display font-bold mx-auto text-sm shadow-lg">
-                        {step.num}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {industries.map(({ title, desc, icon: Icon }, i) => (
+                    <div key={i} className="mat-card p-7 group">
+                      <div className="w-12 h-12 rounded-sm bg-mat-blue-50 flex items-center justify-center mb-5 group-hover:bg-mat-blue-500 transition-colors duration-300">
+                        <Icon className="w-5 h-5 text-mat-blue-500 group-hover:text-white transition-colors duration-300" />
                       </div>
-                      <h3 className="font-display font-semibold text-white text-sm sm:text-base">{step.title}</h3>
-                      <p className="text-xs text-brand-300 leading-relaxed">{step.desc}</p>
+                      <h3 className="font-display font-bold text-mat-dark-800 text-sm uppercase tracking-wide mb-2">{title}</h3>
+                      <p className="font-sans text-xs text-mat-dark-400 leading-relaxed">{desc}</p>
                     </div>
                   ))}
                 </div>
               </div>
             </section>
 
-            {/* Why Us */}
-            <section id="why-us" className="py-20 bg-white">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* ── Workflow — dark band ── */}
+            <section className="relative py-24 overflow-hidden bg-mat-dark-900">
+              <div className="absolute inset-0">
+                <img src="/src/assets/images/oil_gas_logistics_1784144502095.jpg" alt="" className="w-full h-full object-cover opacity-20" />
+              </div>
+              <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="text-center max-w-2xl mx-auto mb-16">
+                  <p className="mat-eyebrow font-display font-bold text-xs uppercase tracking-[0.22em] text-mat-blue-400 mx-auto items-center">
+                    Streamlined Logistics
+                  </p>
+                  <h2 className="font-display font-black text-4xl sm:text-5xl text-white mt-5 tracking-tight leading-tight">
+                    Our Delivery Workflow
+                  </h2>
+                  <p className="font-sans text-mat-dark-300 text-sm mt-4 leading-relaxed">
+                    From terminal loading directly to your storage nozzles.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+                  {workflow.map((step, i) => (
+                    <div key={i} className="bg-mat-dark-800 border border-mat-dark-700 p-7 rounded-sm group hover:border-mat-blue-500 transition-colors">
+                      <div className="font-display font-black text-3xl text-mat-blue-500 mb-4">{step.num}</div>
+                      <h3 className="font-display font-bold text-white text-sm uppercase tracking-wide mb-2">{step.title}</h3>
+                      <p className="font-sans text-xs text-mat-dark-300 leading-relaxed">{step.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* ── Why Us ── */}
+            <section className="py-24 bg-white">
+              <div className="max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="space-y-6">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-[2px] bg-amber-450"></div>
-                    <span className="font-mono text-xs font-semibold tracking-[0.2em] uppercase text-amber-600">
-                      Our Uncompromised Edge
-                    </span>
-                  </div>
-                  <h2 className="font-display text-3xl sm:text-4xl font-bold text-brand-900 tracking-tight leading-tight">
+                  <p className="mat-eyebrow font-display font-bold text-xs uppercase tracking-[0.22em] text-mat-blue-600">
+                    Our Uncompromised Edge
+                  </p>
+                  <h2 className="font-display font-black text-4xl sm:text-5xl text-mat-dark-800 tracking-tight leading-tight">
                     Why Corporate Leaders Choose Capella
                   </h2>
-                  <p className="text-brand-600 text-sm leading-relaxed">
-                    We understand that fuel logistics in Nigeria demands absolute transparency and uncompromising chemical purity. Sub-standard AGO causes millions in generator wear, injector clogs, and lost operational hours.
+                  <p className="font-sans text-mat-dark-400 text-sm leading-relaxed">
+                    Fuel logistics in Nigeria demands absolute transparency and chemical purity. Sub-standard AGO causes millions in generator wear and lost operational hours.
                   </p>
 
-                  <div className="space-y-5">
-                    {[
-                      { title: "Triple Filtration Pipeline", desc: "We filter diesel during terminal collection, tanker loading, and final customer discharge to eradicate water and rust sediments." },
-                      { title: "Meter Verification Security", desc: "Our delivery trucks feature sealed positive-displacement meters alongside physical manual dip measurements to confirm exact volume receipts." },
-                      { title: "Federal Regulatory Compliance", desc: "Fully registered and licensed with the Nigerian Midstream and Downstream Petroleum Regulatory Authority (NMDPRA) for maximum peace of mind." },
-                    ].map((why, idx) => (
-                      <div key={idx} className="flex gap-4 items-start group">
-                        <div className="w-7 h-7 rounded-md bg-amber-450/15 text-amber-600 flex items-center justify-center shrink-0 text-xs font-bold mt-0.5 group-hover:bg-amber-450 group-hover:text-white transition-colors">✓</div>
-                        <div className="space-y-1">
-                          <h4 className="font-display font-semibold text-brand-900 text-sm sm:text-base">{why.title}</h4>
-                          <p className="text-xs text-brand-600 leading-relaxed">{why.desc}</p>
+                  <div className="space-y-5 pt-2">
+                    {whyUs.map((w, i) => (
+                      <div key={i} className="flex gap-4 items-start">
+                        <CheckCircle className="w-6 h-6 text-mat-blue-500 shrink-0 mt-0.5" />
+                        <div>
+                          <h4 className="font-display font-bold text-mat-dark-800 text-sm uppercase tracking-wide mb-1">{w.title}</h4>
+                          <p className="font-sans text-xs text-mat-dark-400 leading-relaxed">{w.desc}</p>
                         </div>
                       </div>
                     ))}
@@ -178,94 +139,61 @@ export default function App() {
                 </div>
 
                 <div className="relative">
-                  <div className="absolute inset-0 bg-brand-900 rounded-2xl transform rotate-2 scale-[1.02] opacity-5"></div>
-                  <div className="relative bg-white p-3 rounded-2xl shadow-lg border border-brand-100 overflow-hidden">
+                  <div className="mat-card p-3 rounded-sm overflow-hidden">
                     <img
                       src="/src/assets/images/bulk_diesel_truck_1784144470553.jpg"
-                      alt="Capella unadulterated diesel supply truck in Nigeria"
-                      referrerPolicy="no-referrer"
-                      className="w-full h-80 lg:h-[420px] object-cover rounded-xl img-zoom"
+                      alt="Capella bulk diesel truck"
+                      className="w-full h-[440px] object-cover img-zoom"
                     />
                   </div>
-                  {/* Floating stat card */}
-                  <div className="absolute -bottom-5 -left-5 bg-brand-900 text-white p-4 rounded-xl shadow-xl border border-brand-800 hidden sm:block">
-                    <div className="font-display font-bold text-2xl text-amber-450">35%</div>
-                    <div className="text-[10px] uppercase font-mono tracking-wider text-brand-300 mt-0.5">Critical Buffer</div>
-                  </div>
                 </div>
               </div>
             </section>
 
-            {/* Featured Service - with background image */}
-            <section id="featured-service" className="relative py-20 overflow-hidden">
-              <div className="absolute inset-0">
-                <img
-                  src="/src/assets/images/emergency_delivery_1784144518527.jpg"
-                  alt=""
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-brand-950/97 via-brand-950/92 to-brand-900/85"></div>
-              </div>
-              <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="bg-white/5 backdrop-blur-md text-white rounded-2xl p-8 sm:p-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-center border border-brand-800/60 shadow-2xl">
-                  <div className="md:col-span-8 space-y-4">
-                    <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-amber-450">
-                      Featured Program
-                    </span>
-                    <h3 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">
-                      Capella Scheduled Bulk Supply
-                    </h3>
-                    <p className="text-sm text-brand-300 leading-relaxed max-w-xl">
-                      Enroll in our contract procurement replenishment plan. We automatically track, forecast, and dispatch bulk diesel consignments directly to your reservoirs before your levels hit the 35% critical margin.
-                    </p>
-                    <ul className="grid grid-cols-2 gap-2.5 pt-2 text-xs text-brand-200">
-                      {["Priority supply guarantees", "Preferred wholesale tariff indices", "Quarterly generator thermal audits", "Customized monthly invoicing"].map((item) => (
-                        <li key={item} className="flex items-center gap-2">
-                          <span className="text-amber-450">✓</span> {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="md:col-span-4 flex justify-center md:justify-end">
-                    <button
-                      onClick={() => setActiveTab("CONTACT")}
-                      className="px-7 py-3.5 bg-amber-450 hover:bg-amber-500 text-brand-950 font-sans font-semibold text-xs uppercase tracking-widest rounded-md shadow-lg transition-all flex items-center gap-2 group"
-                    >
-                      <span>Enroll Program</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                    </button>
-                  </div>
+            {/* ── Featured Service — blue band ── */}
+            <section className="relative py-20 bg-mat-blue-600 overflow-hidden">
+              <div className="absolute inset-0 bg-mat-blue-700/30"></div>
+              <div className="relative max-w-5xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-10">
+                <div className="space-y-3 text-white max-w-xl">
+                  <p className="font-display font-bold text-xs uppercase tracking-[0.22em] text-mat-blue-100">
+                    Featured Program
+                  </p>
+                  <h3 className="font-display font-black text-3xl sm:text-4xl tracking-tight leading-tight">
+                    Scheduled Bulk Supply
+                  </h3>
+                  <p className="font-sans text-mat-blue-100 text-sm leading-relaxed">
+                    We automatically track, forecast, and dispatch bulk diesel consignments before your levels hit the 35% critical margin.
+                  </p>
                 </div>
+                <button
+                  onClick={() => setActiveTab("CONTACT")}
+                  className="bg-white text-mat-blue-600 hover:bg-mat-dark-50 font-display font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-sm transition-all flex items-center gap-2 group shrink-0 cursor-pointer"
+                >
+                  Enroll Program <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
               </div>
             </section>
 
-            {/* Final CTA */}
-            <section id="final-cta" className="py-16 bg-brand-50 text-center">
-              <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-                <h2 className="font-display text-3xl sm:text-4xl font-bold text-brand-900 tracking-tight leading-tight">
-                  Powering Abuja's Commercial and Industrial Resilience
+            {/* ── Final CTA ── */}
+            <section className="py-24 bg-mat-dark-50">
+              <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center space-y-6">
+                <h2 className="font-display font-black text-4xl sm:text-5xl text-mat-dark-800 tracking-tight leading-tight">
+                  Powering Abuja's Commercial Resilience
                 </h2>
-                <p className="text-brand-600 text-sm max-w-xl mx-auto leading-relaxed">
+                <p className="font-sans text-mat-dark-400 text-sm leading-relaxed max-w-xl mx-auto">
                   Join corporate networks of healthcare centers, five-star hospitality brands, and heavy industry plants that rely on Capella's fuel supply standard.
                 </p>
-                <div className="pt-2 flex flex-col sm:flex-row justify-center gap-4">
-                  <button
-                    onClick={() => setActiveTab("CONTACT")}
-                    className="px-7 py-3.5 bg-brand-900 hover:bg-brand-800 text-white font-sans font-semibold text-xs uppercase tracking-widest rounded-md shadow-md transition-all flex items-center justify-center gap-2 group"
-                  >
-                    <span>Request Custom Quote</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                  </button>
-                </div>
+                <button onClick={() => setActiveTab("CONTACT")} className="mat-btn-primary mt-2">
+                  Request Custom Quote <ArrowRight className="w-4 h-4" />
+                </button>
               </div>
             </section>
           </div>
         )}
 
         {activeTab === "SERVICES" && <ServicesTab setActiveTab={setActiveTab} />}
-        {activeTab === "ABOUT" && <AboutTab setActiveTab={setActiveTab} />}
-        {activeTab === "CONTACT" && <ContactTab setActiveTab={setActiveTab} />}
+        {activeTab === "ABOUT"    && <AboutTab    setActiveTab={setActiveTab} />}
+        {activeTab === "CONTACT"  && <ContactTab  setActiveTab={setActiveTab} />}
       </main>
 
       <Footer setActiveTab={setActiveTab} />
