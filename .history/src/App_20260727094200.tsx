@@ -6,7 +6,7 @@ import HeroSection from "./components/HeroSection";
 import AboutTab from "./components/AboutTab";
 import ServicesTab from "./components/ServicesTab";
 import ContactTab from "./components/ContactTab";
-import { ShieldCheck, Calendar, Clock, Landmark, Sparkles, Building, Hammer, Factory, Zap, HelpCircle, Truck } from "lucide-react";
+import { ShieldCheck, Calendar, Clock, Landmark, Sparkles, Building, Hammer, Factory, Zap, HelpCircle } from "lucide-react";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>("HOME");
@@ -45,85 +45,10 @@ export default function App() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                   {[
-                    { title: "Oil & Gas", desc: "Comprehensive logistics and supply solutions for petroleum operations.", icon: Zap },
-                    { title: "Construction Companies", desc: "Direct on-site deliveries fueling heavy equipment and generator banks.", icon: Hammer },
-                    { title: "Manufacturing Industries", desc: "Scheduled bulk supplies matching complex production duty cycles.", icon: Factory },
-                    { title: "Hotels & Hospitality", desc: "Continuous supply protecting guest comfort and HVAC systems.", icon: Building }
-                  ].map((industry, idx) => {
-                    const Icon = industry.icon;
-                    return (
-                      <div
-                        key={idx}
-                        className="bg-slate-50 p-6 rounded-xl border border-gray-100 flex flex-col gap-4 shadow-3xs hover:shadow-2xs hover:bg-slate-100/50 transition-all"
-                      >
-                        <div className="w-10 h-10 bg-amber-500/10 text-amber-600 rounded-lg flex items-center justify-center shrink-0">
-                          <Icon className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <h3 className="font-display font-bold text-slate-900 text-base mb-1">{industry.title}</h3>
-                          <p className="text-xs text-slate-600 leading-relaxed">{industry.desc}</p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                  {[
-                    { title: "Hospitals & Healthcare", desc: "Reliable power for critical medical facilities and life-support systems.", icon: ShieldCheck },
-                    { title: "Schools & Universities", desc: "Educational institutions requiring consistent backup power solutions.", icon: Landmark },
-                    { title: "Government Agencies", desc: "Public sector organizations with high-security and reliability requirements.", icon: Building },
-                    { title: "Telecommunications", desc: "Network infrastructure requiring uninterrupted power supply.", icon: Zap }
-                  ].map((industry, idx) => {
-                    const Icon = industry.icon;
-                    return (
-                      <div
-                        key={idx}
-                        className="bg-slate-50 p-6 rounded-xl border border-gray-100 flex flex-col gap-4 shadow-3xs hover:shadow-2xs hover:bg-slate-100/50 transition-all"
-                      >
-                        <div className="w-10 h-10 bg-amber-500/10 text-amber-600 rounded-lg flex items-center justify-center shrink-0">
-                          <Icon className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <h3 className="font-display font-bold text-slate-900 text-base mb-1">{industry.title}</h3>
-                          <p className="text-xs text-slate-600 leading-relaxed">{industry.desc}</p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                  {[
-                    { title: "Logistics Companies", desc: "Transport and distribution hubs requiring efficient fuel management.", icon: Truck },
-                    { title: "Estates & Residences", desc: "Gated communities and luxury residential complexes.", icon: Building },
-                    { title: "Supermarkets & Malls", desc: "Retail centers with high energy consumption needs.", icon: Factory },
-                    { title: "Banks & Financial", desc: "Financial institutions requiring secure and reliable power.", icon: Landmark }
-                  ].map((industry, idx) => {
-                    const Icon = industry.icon;
-                    return (
-                      <div
-                        key={idx}
-                        className="bg-slate-50 p-6 rounded-xl border border-gray-100 flex flex-col gap-4 shadow-3xs hover:shadow-2xs hover:bg-slate-100/50 transition-all"
-                      >
-                        <div className="w-10 h-10 bg-amber-500/10 text-amber-600 rounded-lg flex items-center justify-center shrink-0">
-                          <Icon className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <h3 className="font-display font-bold text-slate-900 text-base mb-1">{industry.title}</h3>
-                          <p className="text-xs text-slate-600 leading-relaxed">{industry.desc}</p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                  {[
-                    { title: "Restaurants", desc: "Food service establishments requiring consistent power for operations.", icon: Building },
-                    { title: "Agricultural Companies", desc: "Farming and agribusiness operations with energy-intensive needs.", icon: Factory },
-                    { title: "Mining Companies", desc: "Extractive industries requiring heavy equipment power solutions.", icon: Hammer },
-                    { title: "Churches & Religious", desc: "Places of worship requiring reliable backup power systems.", icon: Landmark }
+                    { title: "Healthcare & Hospitals", desc: "Guaranteed unadulterated diesel supply supporting life-support machinery, cooling plants, and ICU back-ups.", icon: ShieldCheck },
+                    { title: "Hotels & Hospitality", desc: "Continuous volume drops protecting guest comfort, lighting installations, and HVAC systems round-the-clock.", icon: Building },
+                    { title: "Heavy Construction", desc: "Direct on-site tanker deliveries fueling heavy earthmovers, concrete batchers, and generator banks.", icon: Hammer },
+                    { title: "Factories & Industrial", desc: "Depot-direct scheduled bulk supplies matching complex manufacturing duty cycles and storage facilities.", icon: Factory }
                   ].map((industry, idx) => {
                     const Icon = industry.icon;
                     return (

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ActiveTab } from "../types";
-import { Landmark, ShieldCheck, Truck, Scale, ChevronDown, ChevronUp, HelpCircle, Users, HardHat } from "lucide-react";
+import { Landmark, ShieldCheck, Truck, Scale, ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
 
 interface AboutTabProps {
   setActiveTab: (tab: ActiveTab) => void;
@@ -16,12 +16,10 @@ export default function AboutTab({ setActiveTab }: AboutTabProps) {
   ];
 
   const values = [
-    { title: "Integrity", desc: "We uphold the highest ethical standards in all our business dealings and relationships.", icon: Scale },
-    { title: "Professionalism", desc: "We deliver excellence through skilled expertise and disciplined service execution.", icon: ShieldCheck },
-    { title: "Innovation", desc: "We continuously improve our solutions to meet evolving industry needs.", icon: Landmark },
-    { title: "Quality", desc: "We maintain uncompromising standards across all our service offerings.", icon: Truck },
-    { title: "Teamwork", desc: "We collaborate effectively to achieve collective success for our clients.", icon: Users },
-    { title: "Safety", desc: "We prioritize safety in all operations to protect people, assets, and the environment.", icon: HardHat },
+    { title: "Integrity Above All", desc: "We provide true volume meter tracking. When you pay for 10,000 Litres, you get exactly 10,000 Litres.", icon: Scale },
+    { title: "Uncompromising Quality", desc: "Our double-filtered AGO prevents generator injector wear and guards your primary backup investments.", icon: ShieldCheck },
+    { title: "National Reliability", desc: "Operating out of Abuja FCT, we help local corporate clients mitigate public power grid gridlocks.", icon: Landmark },
+    { title: "Customer-First Logistics", desc: "Whether scheduled weekly drop-offs or rapid 2-hour emergency dispatch, we adapt to your operational pace.", icon: Truck },
   ];
 
   const faqs = [
@@ -58,22 +56,21 @@ export default function AboutTab({ setActiveTab }: AboutTabProps) {
             About Capella Integrated Global
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight uppercase">
-            Integrated Solutions. Trusted Results.
+            Professional Logistics &amp; Energy Partners
           </h2>
           <p className="text-slate-500 text-sm leading-relaxed">
-            Capella Integrated Global Limited is a diversified Nigerian company providing integrated business solutions across the oil and gas, procurement, logistics, engineering, construction support, and general contracting sectors.
+            Capella Integrated Global is Abuja’s premier diesel supply and logistics enterprise. Founded to resolve fuel supply chain inconsistencies, we have established ourselves as the key power partner to Abuja's leading hospitals, hospitality properties, manufacturing hubs, and construction conglomerates.
           </p>
           <p className="text-slate-500 text-sm leading-relaxed">
-            We deliver innovative, efficient, and cost-effective solutions tailored to meet the unique needs of corporate organisations, government institutions, and private businesses.
+            Whether you operate a healthcare facility demanding zero-second power dropouts, a hotel prioritizing luxury customer satisfaction, or heavy earthmoving aggregates on-site, our robust procurement and transport pipeline guarantees premium quality unadulterated AGO, exactly when you need it.
           </p>
 
           {/* Inline list from mock up */}
           <ul className="space-y-3 pt-2">
             {[
-              "Registered Nigerian Company (Est. 2024)",
-              "Experienced Management & Professional Workforce",
-              "Reliable Logistics & Competitive Pricing",
-              "Customer-Focused Service",
+              "Unmatched Quality Assurance & Filtration Standards",
+              "Fleet of Modern Calibration-Calibrated Trucks",
+              "Transparent Pricing & Precise Metre Discharges",
             ].map((bullet, idx) => (
               <li key={idx} className="flex items-center gap-3 text-xs font-semibold text-slate-800">
                 <span className="w-5 h-5 rounded-none border border-slate-950 text-slate-950 flex items-center justify-center text-[10px] shrink-0 font-bold bg-slate-50">✓</span>
@@ -130,15 +127,14 @@ export default function AboutTab({ setActiveTab }: AboutTabProps) {
             Our Pillars
           </span>
           <h3 className="font-display text-3xl font-bold text-slate-900 tracking-tight uppercase">
-            Mission &amp; Vision
+            Our Mission &amp; Values
           </h3>
           <p className="text-slate-500 text-sm leading-relaxed max-w-2xl mx-auto">
-            <strong>Mission:</strong> To deliver innovative business solutions that exceed customer expectations.<br /><br />
-            <strong>Vision:</strong> To become Nigeria's most trusted integrated services company.
+            Our mission is simple: to establish absolute reliability in the Nigerian energy logistics space. We seek to protect your critical operations through uncompromised fuel standard enforcement and strict service level adherence.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-200 border border-slate-200">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-200 border border-slate-200">
           {values.map((v, idx) => {
             const Icon = v.icon;
             return (

@@ -110,7 +110,7 @@ export default function ContactTab({ setActiveTab }: ContactTabProps) {
             <div className="space-y-1.5">
               <h4 className="font-display font-bold text-slate-900 text-xs uppercase tracking-wider">Corporate HQ</h4>
               <p className="text-xs text-slate-500 leading-relaxed">
-                (Address pending from client)
+                Suite 302, Plot 491, Constitution Avenue, Central Business District, Abuja, FCT, Nigeria.
               </p>
             </div>
           </div>
@@ -123,13 +123,10 @@ export default function ContactTab({ setActiveTab }: ContactTabProps) {
             <div className="space-y-1.5 text-xs text-slate-500">
               <h4 className="font-display font-bold text-slate-900 text-xs uppercase tracking-wider">Direct Lines</h4>
               <p className="font-semibold text-slate-850">
-                Phone: <span className="font-mono">(Pending from client)</span>
+                Main: <a href="tel:+234800CAPELLA" className="hover:text-slate-950 underline font-mono">+234 (0) 800-CAPELLA</a>
               </p>
               <p className="font-semibold text-slate-850">
-                WhatsApp: <span className="font-mono">(Pending from client)</span>
-              </p>
-              <p className="font-semibold text-slate-850">
-                Email: <span className="font-mono">(Pending from client)</span>
+                Email: <a href="mailto:dispatch@capellaglobal.com" className="hover:text-slate-950 underline font-mono">dispatch@capellaglobal.com</a>
               </p>
             </div>
           </div>
@@ -140,9 +137,8 @@ export default function ContactTab({ setActiveTab }: ContactTabProps) {
               <Clock className="w-5 h-5" />
             </div>
             <div className="space-y-1.5 text-xs text-slate-500 leading-relaxed">
-              <h4 className="font-display font-bold text-slate-900 text-xs uppercase tracking-wider">Business Hours</h4>
-              <p>Monday – Friday: 8:00 AM – 6:00 PM</p>
-              <p>Saturday: 9:00 AM – 4:00 PM</p>
+              <h4 className="font-display font-bold text-slate-900 text-xs uppercase tracking-wider">Service Hours</h4>
+              <p>Office: Mon - Fri (8:00 AM - 6:00 PM)</p>
               <p className="font-bold text-slate-800 flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
                 Logistics Dispatch: 24/7/365 Standby

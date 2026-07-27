@@ -6,7 +6,7 @@ import HeroSection from "./components/HeroSection";
 import AboutTab from "./components/AboutTab";
 import ServicesTab from "./components/ServicesTab";
 import ContactTab from "./components/ContactTab";
-import { ShieldCheck, Calendar, Clock, Landmark, Sparkles, Building, Hammer, Factory, Zap, HelpCircle, Truck } from "lucide-react";
+import { ShieldCheck, Calendar, Clock, Landmark, Sparkles, Building, Hammer, Factory, Zap, HelpCircle } from "lucide-react";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>("HOME");
@@ -99,31 +99,6 @@ export default function App() {
                     { title: "Estates & Residences", desc: "Gated communities and luxury residential complexes.", icon: Building },
                     { title: "Supermarkets & Malls", desc: "Retail centers with high energy consumption needs.", icon: Factory },
                     { title: "Banks & Financial", desc: "Financial institutions requiring secure and reliable power.", icon: Landmark }
-                  ].map((industry, idx) => {
-                    const Icon = industry.icon;
-                    return (
-                      <div
-                        key={idx}
-                        className="bg-slate-50 p-6 rounded-xl border border-gray-100 flex flex-col gap-4 shadow-3xs hover:shadow-2xs hover:bg-slate-100/50 transition-all"
-                      >
-                        <div className="w-10 h-10 bg-amber-500/10 text-amber-600 rounded-lg flex items-center justify-center shrink-0">
-                          <Icon className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <h3 className="font-display font-bold text-slate-900 text-base mb-1">{industry.title}</h3>
-                          <p className="text-xs text-slate-600 leading-relaxed">{industry.desc}</p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                  {[
-                    { title: "Restaurants", desc: "Food service establishments requiring consistent power for operations.", icon: Building },
-                    { title: "Agricultural Companies", desc: "Farming and agribusiness operations with energy-intensive needs.", icon: Factory },
-                    { title: "Mining Companies", desc: "Extractive industries requiring heavy equipment power solutions.", icon: Hammer },
-                    { title: "Churches & Religious", desc: "Places of worship requiring reliable backup power systems.", icon: Landmark }
                   ].map((industry, idx) => {
                     const Icon = industry.icon;
                     return (

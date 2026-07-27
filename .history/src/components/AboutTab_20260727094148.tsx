@@ -20,8 +20,8 @@ export default function AboutTab({ setActiveTab }: AboutTabProps) {
     { title: "Professionalism", desc: "We deliver excellence through skilled expertise and disciplined service execution.", icon: ShieldCheck },
     { title: "Innovation", desc: "We continuously improve our solutions to meet evolving industry needs.", icon: Landmark },
     { title: "Quality", desc: "We maintain uncompromising standards across all our service offerings.", icon: Truck },
-    { title: "Teamwork", desc: "We collaborate effectively to achieve collective success for our clients.", icon: Users },
-    { title: "Safety", desc: "We prioritize safety in all operations to protect people, assets, and the environment.", icon: HardHat },
+    { title: "Teamwork", desc: "We collaborate effectively to achieve collective success for our clients.", icon: Scale },
+    { title: "Safety", desc: "We prioritize safety in all operations to protect people, assets, and the environment.", icon: ShieldCheck },
   ];
 
   const faqs = [

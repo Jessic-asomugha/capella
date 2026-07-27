@@ -65,11 +65,11 @@ export default function Footer({ setActiveTab }: FooterProps) {
             </span>
           </div>
           <p className="text-xs text-slate-500 leading-relaxed">
-            Capella Integrated Global Limited - Integrated Solutions. Trusted Results. A diversified Nigerian company providing integrated business solutions across oil and gas, procurement, logistics, engineering, construction support, and general contracting sectors.
+            Capella Integrated Global is a premier diesel supply and energy logistics company based in Abuja, Nigeria, dedicated to powering industrial growth and operational stability.
           </p>
           <div className="pt-2">
             <span className="px-2.5 py-1 text-[10px] font-mono tracking-wider font-semibold rounded-none bg-slate-850 text-slate-300 uppercase border border-slate-800">
-              Est. 2024
+              RC: 1740928
             </span>
           </div>
         </div>
@@ -112,16 +112,16 @@ export default function Footer({ setActiveTab }: FooterProps) {
             <div className="flex gap-2 items-start">
               <MapPin className="w-4 h-4 text-white shrink-0 mt-0.5" />
               <span>
-                (Address pending from client)
+                Suite 302, Plot 491, Constitution Avenue, Central Business District, Abuja, FCT, Nigeria.
               </span>
             </div>
             <div className="flex gap-2 items-center">
               <Phone className="w-4 h-4 text-white shrink-0" />
-              <span>(Phone pending from client)</span>
+              <span>+234 (0) 800-CAPELLA</span>
             </div>
             <div className="flex gap-2 items-center">
               <Mail className="w-4 h-4 text-white shrink-0" />
-              <span>(Email pending from client)</span>
+              <span>dispatch@capellaglobal.com</span>
             </div>
           </div>
         </div>
@@ -130,10 +130,10 @@ export default function Footer({ setActiveTab }: FooterProps) {
         <div className="space-y-4">
           <h4 className="font-display text-white text-xs font-semibold uppercase tracking-widest">Logistics Area</h4>
           <p className="text-xs leading-relaxed text-slate-500">
-            Our logistical networks cover Abuja (FCT), Kaduna, Nasarawa, Niger State, and Kogi. International partnerships available upon request.
+            Our logistical networks cover Abuja Municipal, Garki, Wuse, Maitama, Asokoro, Gwarinpa, and industrial hubs across Nasarawa, Niger, and major Nigerian corridors.
           </p>
           <div className="flex flex-wrap gap-1.5 pt-1">
-            {["Abuja FCT", "Kaduna", "Nasarawa", "Niger State", "Kogi"].map((loc) => (
+            {["Abuja FCT", "Nasarawa", "Niger", "Kaduna", "Lokoja"].map((loc) => (
               <span key={loc} className="text-[10px] font-mono px-2 py-0.5 bg-slate-850 text-slate-400 rounded-none border border-slate-800">
                 {loc}
               </span>
