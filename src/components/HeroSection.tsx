@@ -16,7 +16,7 @@ export default function HeroSection({ setActiveTab }: HeroSectionProps) {
   return (
     <>
       {/* ── Full-bleed hero ── */}
-      <section className="relative min-h-[92vh] flex items-end overflow-hidden">
+      <section className="relative min-h-[88vh] flex items-end overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0">
           <img
@@ -24,7 +24,7 @@ export default function HeroSection({ setActiveTab }: HeroSectionProps) {
             alt=""
             className="w-full h-full object-cover"
           />
-          {/* Dark overlay — matches Matelick dark gradient */}
+          {/* Dark overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-mat-dark-950/90 via-mat-dark-900/75 to-mat-dark-900/40" />
         </div>
 
@@ -55,12 +55,12 @@ export default function HeroSection({ setActiveTab }: HeroSectionProps) {
         </div>
       </section>
 
-      {/* ── Pillar strip ── */}
-      <section className="bg-white border-b border-mat-dark-100">
+      {/* ── Trust Bar — fully in the light section ── */}
+      <section className="bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-mat-dark-100">
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-mat-dark-100 border-b border-mat-dark-100">
             {pillars.map(({ icon: Icon, label, sub }, i) => (
-              <div key={i} className="flex items-center gap-5 py-7 px-6 group hover:bg-mat-blue-50 transition-colors">
+              <div key={i} className="flex items-center gap-5 py-8 px-6 group hover:bg-mat-blue-50 transition-colors">
                 <div className="w-12 h-12 rounded-sm bg-mat-blue-500 flex items-center justify-center shrink-0 group-hover:bg-mat-blue-600 transition-colors">
                   <Icon className="w-5 h-5 text-white" />
                 </div>
