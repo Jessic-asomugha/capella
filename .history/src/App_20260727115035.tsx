@@ -58,9 +58,9 @@ export default function App() {
   ];
 
   const whyUs = [
-    { title: "Professionalism & Integrity", desc: "We deliver complete business solutions backed by professionalism, integrity, and timely execution." },
-    { title: "Customer-Focused Service", desc: "Our focus is building lasting relationships through quality service and dependable performance." },
-    { title: "Reliable Logistics", desc: "Experienced management and professional workforce ensuring competitive pricing and reliable delivery." },
+    { title: "Triple Filtration Pipeline", desc: "Fuel is filtered at terminal collection, tanker loading, and final discharge to eradicate water and rust sediments." },
+    { title: "Meter Verification Security", desc: "Delivery trucks feature sealed positive-displacement meters alongside manual dip measurements to confirm exact volume." },
+    { title: "Federal Regulatory Compliance", desc: "Fully registered and licensed with NMDPRA for maximum peace of mind." },
   ];
 
   return (
@@ -84,7 +84,7 @@ export default function App() {
                     Who We Serve
                   </h2>
                   <p className="font-sans text-mat-dark-400 text-sm mt-4 leading-relaxed">
-                    Across Abuja (FCT), Kaduna, Nasarawa, Niger State, and Kogi. International partnerships available upon request.
+                    Across Abuja (FCT), Kaduna, Nasarawa, Niger State, and Kogi.
                   </p>
                 </div>
 

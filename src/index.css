@@ -1,22 +1,124 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Space Grotesk", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+
+  /* Blue accent — Matelick electric blue */
+  --color-mat-blue-50:  #e8f0fd;
+  --color-mat-blue-100: #c5d8fb;
+  --color-mat-blue-200: #9dbef8;
+  --color-mat-blue-300: #6da0f4;
+  --color-mat-blue-400: #4585f0;
+  --color-mat-blue-500: #1B6CE8;
+  --color-mat-blue-600: #1558c8;
+  --color-mat-blue-700: #1045a4;
+  --color-mat-blue-800: #0b3380;
+  --color-mat-blue-900: #072360;
+
+  /* Charcoal scale */
+  --color-mat-dark-50:  #f2f3f4;
+  --color-mat-dark-100: #dfe1e4;
+  --color-mat-dark-200: #bcc0c6;
+  --color-mat-dark-300: #939aa3;
+  --color-mat-dark-400: #6b7480;
+  --color-mat-dark-500: #4a5260;
+  --color-mat-dark-600: #363d4a;
+  --color-mat-dark-700: #252c38;
+  --color-mat-dark-800: #181e28;
+  --color-mat-dark-900: #0f1419;
+  --color-mat-dark-950: #080c10;
 }
 
-/* Custom modern aesthetic utilities */
-.glass-card {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(229, 231, 235, 0.5);
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
-.dark-glass {
-  background: rgba(17, 24, 39, 0.85);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* Entrance animation */
+@keyframes mat-fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+.mat-fade-up        { animation: mat-fade-up 0.65s cubic-bezier(0.22,1,0.36,1) both; }
+.mat-fade-up-d1     { animation: mat-fade-up 0.65s cubic-bezier(0.22,1,0.36,1) 0.1s both; }
+.mat-fade-up-d2     { animation: mat-fade-up 0.65s cubic-bezier(0.22,1,0.36,1) 0.2s both; }
+.mat-fade-up-d3     { animation: mat-fade-up 0.65s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+
+/* Matelick eyebrow rule */
+.mat-eyebrow {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.mat-eyebrow::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--color-mat-blue-500);
+  border-radius: 2px;
 }
 
+/* Card elevation */
+.mat-card {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.mat-card:hover {
+  box-shadow: 0 8px 28px rgba(0,0,0,0.13), 0 2px 6px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+}
+
+/* Blue button */
+.mat-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: var(--color-mat-blue-500);
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.mat-btn-primary:hover {
+  background: var(--color-mat-blue-600);
+  transform: translateY(-1px);
+}
+
+.mat-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: transparent;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  border: 2px solid rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.mat-btn-outline:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: #fff;
+}
+
+/* Image zoom utility */
+.img-zoom { transition: transform 0.6s cubic-bezier(0.22,1,0.36,1); }
+.img-zoom:hover { transform: scale(1.04); }

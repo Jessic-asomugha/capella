@@ -58,9 +58,9 @@ export default function App() {
   ];
 
   const whyUs = [
-    { title: "Professionalism & Integrity", desc: "We deliver complete business solutions backed by professionalism, integrity, and timely execution." },
-    { title: "Customer-Focused Service", desc: "Our focus is building lasting relationships through quality service and dependable performance." },
-    { title: "Reliable Logistics", desc: "Experienced management and professional workforce ensuring competitive pricing and reliable delivery." },
+    { title: "Triple Filtration Pipeline", desc: "Fuel is filtered at terminal collection, tanker loading, and final discharge to eradicate water and rust sediments." },
+    { title: "Meter Verification Security", desc: "Delivery trucks feature sealed positive-displacement meters alongside manual dip measurements to confirm exact volume." },
+    { title: "Federal Regulatory Compliance", desc: "Fully registered and licensed with NMDPRA for maximum peace of mind." },
   ];
 
   return (
@@ -84,18 +84,18 @@ export default function App() {
                     Who We Serve
                   </h2>
                   <p className="font-sans text-mat-dark-400 text-sm mt-4 leading-relaxed">
-                    Across Abuja (FCT), Kaduna, Nasarawa, Niger State, and Kogi. International partnerships available upon request.
+                    Across Abuja (FCT), Kaduna, Nasarawa, Niger State, and Kogi.
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {industries.map(({ title, desc, icon: Icon }, i) => (
-                    <div key={i} className="mat-card p-6 group">
-                      <div className="w-10 h-10 rounded-sm bg-mat-blue-50 flex items-center justify-center mb-4 group-hover:bg-mat-blue-500 transition-colors duration-300">
-                        <Icon className="w-4 h-4 text-mat-blue-500 group-hover:text-white transition-colors duration-300" />
+                    <div key={i} className="mat-card p-7 group">
+                      <div className="w-12 h-12 rounded-sm bg-mat-blue-50 flex items-center justify-center mb-5 group-hover:bg-mat-blue-500 transition-colors duration-300">
+                        <Icon className="w-5 h-5 text-mat-blue-500 group-hover:text-white transition-colors duration-300" />
                       </div>
-                      <h3 className="font-display font-bold text-mat-dark-800 text-sm uppercase tracking-wide mb-2">{title}</h3>
-                      <p className="font-sans text-xs text-mat-dark-400 leading-relaxed">{desc}</p>
+                      <h3 className="font-display font-bold text-mat-dark-800 text-base uppercase tracking-wide mb-2">{title}</h3>
+                      <p className="font-sans text-sm text-mat-dark-400 leading-relaxed">{desc}</p>
                     </div>
                   ))}
                 </div>
