@@ -38,13 +38,20 @@ export default function ContactTab({ setActiveTab }: ContactTabProps) {
       return;
     }
 
-    // Simulate form submission (replace with actual API call when backend is available)
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    const quoteId = "CP-" + Date.now().toString().slice(-8);
-    setResult({ success: true, quoteId });
-    setFormData({ name: "", email: "", phone: "", company: "", serviceType: "Diesel (AGO) Supply", estimatedVolume: "", frequency: "On-demand", deliveryAddress: "", message: "" });
-    setIsLoading(false);
+    try {
+      const res = await fetch("/api/quote", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(formData) });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setResult({ success: true, quoteId: data.quoteId });
+        setFormData({ name: "", email: "", phone: "", company: "", serviceType: "Diesel (AGO) Supply", estimatedVolume: "", frequency: "On-demand", deliveryAddress: "", message: "" });
+      } else {
+        setResult({ success: false, error: data.error || "Failed to submit request." });
+      }
+    } catch {
+      setResult({ success: false, error: "Network error. Please try again." });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const inputCls = "px-4 py-3 border border-mat-dark-200 rounded-sm text-sm bg-white focus:outline-none focus:border-mat-blue-500 focus:ring-2 focus:ring-mat-blue-100 transition-all";

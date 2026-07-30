@@ -5,42 +5,30 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
 
-  /* Deep Blue scale — client brand color #003366 */
-  --color-mat-blue-50:  #e6ecf0;
-  --color-mat-blue-100: #b3c4d1;
-  --color-mat-blue-200: #8098b3;
-  --color-mat-blue-300: #4d6c94;
-  --color-mat-blue-400: #1a4075;
-  --color-mat-blue-500: #003366;
-  --color-mat-blue-600: #002a55;
-  --color-mat-blue-700: #002244;
-  --color-mat-blue-800: #001a33;
-  --color-mat-blue-900: #001122;
+  /* Blue accent — Matelick electric blue */
+  --color-mat-blue-50:  #e8f0fd;
+  --color-mat-blue-100: #c5d8fb;
+  --color-mat-blue-200: #9dbef8;
+  --color-mat-blue-300: #6da0f4;
+  --color-mat-blue-400: #4585f0;
+  --color-mat-blue-500: #1B6CE8;
+  --color-mat-blue-600: #1558c8;
+  --color-mat-blue-700: #1045a4;
+  --color-mat-blue-800: #0b3380;
+  --color-mat-blue-900: #072360;
 
-  /* Gold accent — client brand color #D4AF37 */
-  --color-mat-gold-50:  #fdf6e8;
-  --color-mat-gold-100: #fbe9c2;
-  --color-mat-gold-200: #f8d99b;
-  --color-mat-gold-300: #f5c974;
-  --color-mat-gold-400: #f2b94d;
-  --color-mat-gold-500: #D4AF37;
-  --color-mat-gold-600: #c09e30;
-  --color-mat-gold-700: #a68628;
-  --color-mat-gold-800: #8c6e20;
-  --color-mat-gold-900: #725618;
-
-  /* Black scale — client brand color #222222 */
-  --color-mat-dark-50:  #f5f5f5;
-  --color-mat-dark-100: #e0e0e0;
-  --color-mat-dark-200: #bfbfbf;
-  --color-mat-dark-300: #999999;
-  --color-mat-dark-400: #737373;
-  --color-mat-dark-500: #595959;
-  --color-mat-dark-600: #444444;
-  --color-mat-dark-700: #333333;
-  --color-mat-dark-800: #222222;
-  --color-mat-dark-900: #111111;
-  --color-mat-dark-950: #000000;
+  /* Charcoal scale */
+  --color-mat-dark-50:  #f2f3f4;
+  --color-mat-dark-100: #dfe1e4;
+  --color-mat-dark-200: #bcc0c6;
+  --color-mat-dark-300: #939aa3;
+  --color-mat-dark-400: #6b7480;
+  --color-mat-dark-500: #4a5260;
+  --color-mat-dark-600: #363d4a;
+  --color-mat-dark-700: #252c38;
+  --color-mat-dark-800: #181e28;
+  --color-mat-dark-900: #0f1419;
+  --color-mat-dark-950: #080c10;
 }
 
 html {

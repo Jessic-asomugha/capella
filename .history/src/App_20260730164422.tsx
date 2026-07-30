@@ -85,6 +85,7 @@ export default function App() {
                     Who We Serve
                   </h2>
                   <p className="font-sans text-mat-dark-400 text-sm mt-4 leading-relaxed">
+<<<<<<< HEAD
                     Across Abuja (FCT), Kaduna, Nasarawa, Niger State, and Kogi. International partnerships available upon request.
                   </p>
                 </div>
@@ -97,6 +98,20 @@ export default function App() {
                       </div>
                       <h3 className="font-display font-bold text-mat-dark-800 text-sm uppercase tracking-wide mb-2">{title}</h3>
                       <p className="font-sans text-xs text-mat-dark-400 leading-relaxed">{desc}</p>
+=======
+                    Across Abuja (FCT), Kaduna, Nasarawa, Niger State, and Kogi.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {industries.map(({ title, desc, icon: Icon }, i) => (
+                    <div key={i} className="mat-card p-7 group">
+                      <div className="w-12 h-12 rounded-sm bg-mat-blue-50 flex items-center justify-center mb-5 group-hover:bg-mat-blue-500 transition-colors duration-300">
+                        <Icon className="w-5 h-5 text-mat-blue-500 group-hover:text-white transition-colors duration-300" />
+                      </div>
+                      <h3 className="font-display font-bold text-mat-dark-800 text-base uppercase tracking-wide mb-2">{title}</h3>
+                      <p className="font-sans text-sm text-mat-dark-400 leading-relaxed">{desc}</p>
+>>>>>>> ac86a5cbce81fedef1ab130f26ed1426931ff26d
                     </div>
                   ))}
                 </div>
