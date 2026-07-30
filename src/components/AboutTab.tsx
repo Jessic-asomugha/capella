@@ -10,9 +10,9 @@ export default function AboutTab({ setActiveTab }: AboutTabProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const stats = [
-    { value: "100%",  label: "Unadulterated Fuel",   desc: "AGO sourced only from Tier-1 terminals." },
-    { value: "25+",   label: "Corporate Contracts",  desc: "Abuja's top hotels, hospitals, factories." },
-    { value: "24/7",  label: "Operational Dispatch", desc: "Continuous logistics tracking and support." },
+    { value: "2024",  label: "Established",   desc: "Registered Nigerian company." },
+    { value: "5",     label: "States Covered", desc: "Abuja FCT, Kaduna, Nasarawa, Niger State, Kogi." },
+    { value: "3",     label: "Core Services",  desc: "Diesel supply, bulk delivery, procurement & logistics." },
   ];
 
   const values = [
@@ -25,11 +25,10 @@ export default function AboutTab({ setActiveTab }: AboutTabProps) {
   ];
 
   const faqs = [
-    { q: "What makes Capella's diesel 'unadulterated'?", a: "Our AGO is sourced strictly from primary, highly vetted terminals. Upon loading, the fuel undergoes multi-stage filtration to eliminate moisture and microscopic dust sediment. We perform flashpoint and density testing before any delivery to guarantee a high octane index which extends generator life." },
-    { q: "What is your minimum order volume?", a: "Minimum order for retail generator top-ups is 500 Litres within Abuja city limits. For our industrial bulk tanker service, deliveries start from 5,000 Litres up to 45,000 Litres per single consignment." },
-    { q: "How does Capella guarantee metre accuracy?", a: "All delivery trucks are outfitted with calibrated positive-displacement flow meters tested and sealed by regulatory bodies. We provide a manual dip-stick measurement before and after discharge to verify physical levels alongside the digital flow-meter printout." },
-    { q: "Do you supply emergency delivery during holidays or weekends?", a: "Yes. Our operations control room in Abuja FCT is open 24/7/365. We maintain emergency reserve trucks on standby specifically to support critical facilities such as healthcare centers, hospitals, cold-storage, and continuous factories." },
-    { q: "Can I schedule recurring automated deliveries?", a: "Absolutely. Most corporate clients use our automated scheduling pipeline. Our logistics platform triggers automated dispatch based on your preset calendar intervals, ensuring you maintain a stable 35% backup buffer." },
+    { q: "What services does Capella offer?", a: "We provide Diesel (AGO) Supply, Bulk Fuel Delivery, and Procurement & Logistics for corporate organizations, government institutions, and private businesses." },
+    { q: "What areas do you cover?", a: "Our service area covers Abuja (FCT), Kaduna, Nasarawa, Niger State, and Kogi. International partnerships are available upon request." },
+    { q: "What are your business hours?", a: "We operate Monday to Friday, 8:00 AM to 6:00 PM, and Saturday, 9:00 AM to 4:00 PM." },
+    { q: "Is Capella a registered company?", a: "Yes, Capella Integrated Global Limited is a registered Nigerian company established in 2024." },
   ];
 
   return (

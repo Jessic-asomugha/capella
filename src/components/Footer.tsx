@@ -15,9 +15,9 @@ export default function Footer({ setActiveTab }: FooterProps) {
       <div className="border-b border-mat-dark-800">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { icon: ShieldCheck, title: "Uncompromised Quality", desc: "Triple-filtered, 100% unadulterated AGO sourced from the cleanest global pipelines." },
-            { icon: Clock,       title: "Guaranteed 24/7 Supply", desc: "Modern tanker fleet delivering volume accuracy with metered logistics round-the-clock." },
-            { icon: Zap,         title: "24/7 Support",          desc: "Round-the-clock delivery tracking and emergency response for critical facilities." },
+            { icon: ShieldCheck, title: "Registered Company",  desc: "A registered Nigerian company built on integrity and professionalism." },
+            { icon: Clock,       title: "Reliable Logistics",  desc: "Experienced management and a professional workforce delivering dependable service." },
+            { icon: Zap,         title: "Customer-Focused",    desc: "Competitive pricing backed by responsive, customer-focused support." },
           ].map(({ icon: Icon, title, desc }, i) => (
             <div key={i} className="flex gap-4 items-start">
               <div className="w-11 h-11 rounded-sm bg-mat-dark-800 border border-mat-dark-700 flex items-center justify-center shrink-0">
@@ -78,15 +78,15 @@ export default function Footer({ setActiveTab }: FooterProps) {
           <div className="space-y-3 text-xs">
             <div className="flex gap-2.5 items-start">
               <MapPin className="w-4 h-4 text-mat-blue-500 shrink-0 mt-0.5" />
-              <span>(Address pending from client)</span>
+              <span>Plot 471, behind Banilux Motors, FCT, Abuja</span>
             </div>
             <div className="flex gap-2.5 items-center">
               <Phone className="w-4 h-4 text-mat-blue-500 shrink-0" />
-              <span>(Phone pending from client)</span>
+              <a href="tel:+2347062062322" className="hover:text-white transition">0706 206 2322</a>
             </div>
             <div className="flex gap-2.5 items-center">
               <Mail className="w-4 h-4 text-mat-blue-500 shrink-0" />
-              <span>(Email pending from client)</span>
+              <a href="mailto:info@capella.com.ng" className="hover:text-white transition">info@capella.com.ng</a>
             </div>
           </div>
         </div>
@@ -109,7 +109,6 @@ export default function Footer({ setActiveTab }: FooterProps) {
       <div className="bg-black/40 py-5">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-mat-dark-500">
           <p>© {year} Capella Integrated Global. All rights reserved.</p>
-          <p className="text-[10px] text-mat-dark-600">Certified diesel supplier regulated by NMDPRA.</p>
         </div>
       </div>
     </footer>

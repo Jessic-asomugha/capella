@@ -9,18 +9,18 @@ interface ContactTabProps {
 export default function ContactTab({ setActiveTab }: ContactTabProps) {
   const [formData, setFormData] = useState<QuoteFormData>({
     name: "", email: "", phone: "", company: "",
-    serviceType: "Retail Diesel Supply", estimatedVolume: "",
+    serviceType: "Diesel (AGO) Supply", estimatedVolume: "",
     frequency: "On-demand", deliveryAddress: "", message: "",
   });
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState<{ success: boolean; quoteId?: string; error?: string } | null>(null);
 
   const zones = [
-    { name: "Central Business District", desc: "Corporate HQ — 15min dispatch" },
-    { name: "Maitama & Asokoro",         desc: "Premium estates & diplomatic zone" },
-    { name: "Wuse & Garki",              desc: "Commercial offices & hotels" },
-    { name: "Gwarinpa & Jabi",           desc: "Residential hubs & construction" },
-    { name: "Idu Industrial Layout",     desc: "Heavy factories & manufacturing" },
+    { name: "Abuja (FCT)",  desc: "Head office and primary operations base" },
+    { name: "Kaduna",       desc: "Extended service coverage" },
+    { name: "Nasarawa",     desc: "Extended service coverage" },
+    { name: "Niger State",  desc: "Extended service coverage" },
+    { name: "Kogi",         desc: "Extended service coverage" },
   ];
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -43,7 +43,7 @@ export default function ContactTab({ setActiveTab }: ContactTabProps) {
       const data = await res.json();
       if (res.ok && data.success) {
         setResult({ success: true, quoteId: data.quoteId });
-        setFormData({ name: "", email: "", phone: "", company: "", serviceType: "Retail Diesel Supply", estimatedVolume: "", frequency: "On-demand", deliveryAddress: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", company: "", serviceType: "Diesel (AGO) Supply", estimatedVolume: "", frequency: "On-demand", deliveryAddress: "", message: "" });
       } else {
         setResult({ success: false, error: data.error || "Failed to submit request." });
       }
@@ -69,15 +69,15 @@ export default function ContactTab({ setActiveTab }: ContactTabProps) {
             Connect &amp; Request a Quote
           </h2>
           <p className="font-sans text-mat-dark-400 text-sm mt-4 leading-relaxed max-w-2xl mx-auto">
-            Reach out to our centralized dispatch office in Abuja CBD or fill in the procurement detail form below. We provide fast, itemized commercial proposals within 60 minutes.
+            Reach out to our dispatch office in Abuja or fill in the procurement detail form below, and our team will get back to you with a commercial proposal.
           </p>
         </div>
 
         {/* Info cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { icon: MapPin, title: "Corporate HQ",  lines: ["(Address pending from client)"] },
-            { icon: Phone,  title: "Direct Lines",  lines: ["Phone: (Pending)", "WhatsApp: (Pending)", "Email: (Pending)"] },
+            { icon: MapPin, title: "Corporate HQ",  lines: ["Plot 471, behind Banilux Motors, FCT, Abuja"] },
+            { icon: Phone,  title: "Direct Lines",  lines: ["0706 206 2322", "0904 848 6637", "info@capella.com.ng"] },
             { icon: Clock,  title: "Business Hours", lines: ["Mon–Fri: 8AM–6PM", "Sat: 9AM–4PM", "Dispatch: 24/7/365"] },
           ].map(({ icon: Icon, title, lines }, i) => (
             <div key={i} className="mat-card p-7 flex gap-4 items-start">
@@ -142,10 +142,9 @@ export default function ContactTab({ setActiveTab }: ContactTabProps) {
               <div className="flex flex-col gap-1.5">
                 <label className={labelCls}>Service Required <span className="text-red-500">*</span></label>
                 <select name="serviceType" value={formData.serviceType} onChange={onChange} className={inputCls}>
-                  <option>Retail Diesel Supply</option>
+                  <option>Diesel (AGO) Supply</option>
                   <option>Bulk Fuel Delivery</option>
-                  <option>Oil & Gas Logistics</option>
-                  <option>Emergency Delivery</option>
+                  <option>Procurement & Logistics</option>
                 </select>
               </div>
               <div className="flex flex-col gap-1.5">
@@ -184,9 +183,9 @@ export default function ContactTab({ setActiveTab }: ContactTabProps) {
           {/* Map + zones */}
           <div className="lg:col-span-5 bg-mat-dark-900 text-white rounded-sm p-7 space-y-6">
             <div>
-              <p className="font-display font-bold text-[10px] uppercase tracking-[0.22em] text-mat-blue-400">Zone Map</p>
-              <h3 className="font-display font-black text-lg tracking-tight mt-1">Abuja Logistics Reach</h3>
-              <p className="font-sans text-xs text-mat-dark-300 mt-1 leading-relaxed">Our trucks operate across Abuja FCT Municipal and adjoining industrial regions.</p>
+              <p className="font-display font-bold text-[10px] uppercase tracking-[0.22em] text-mat-blue-400">Coverage Map</p>
+              <h3 className="font-display font-black text-lg tracking-tight mt-1">Where We Deliver</h3>
+              <p className="font-sans text-xs text-mat-dark-300 mt-1 leading-relaxed">Our trucks operate across Abuja FCT and neighboring states.</p>
             </div>
 
             <div className="relative h-56 bg-mat-dark-950 rounded-sm overflow-hidden flex items-center justify-center">
@@ -201,16 +200,16 @@ export default function ContactTab({ setActiveTab }: ContactTabProps) {
               {/* HQ marker */}
               <div className="absolute top-1/2 left-1/2 w-3.5 h-3.5 bg-mat-blue-500 rounded-full -translate-x-1/2 -translate-y-1/2 animate-ping opacity-75" />
               <div className="absolute top-1/2 left-1/2 w-2.5 h-2.5 bg-mat-blue-500 rounded-full -translate-x-1/2 -translate-y-1/2 border-2 border-mat-dark-900" />
-              <div className="absolute top-[54%] left-[53%] font-mono text-[9px] bg-mat-dark-800 border border-mat-dark-700 text-white px-1.5 py-0.5 rounded font-bold whitespace-nowrap">Capella HQ (CBD)</div>
-              {/* Zone dots */}
+              <div className="absolute top-[54%] left-[53%] font-mono text-[9px] bg-mat-dark-800 border border-mat-dark-700 text-white px-1.5 py-0.5 rounded font-bold whitespace-nowrap">Capella HQ (Abuja)</div>
+              {/* State dots */}
               <div className="absolute top-[36%] left-[63%] w-2 h-2 bg-mat-dark-500 rounded-full" />
-              <div className="absolute top-[38%] left-[65%] font-mono text-[8px] text-mat-dark-400">Maitama</div>
+              <div className="absolute top-[38%] left-[65%] font-mono text-[8px] text-mat-dark-400">Kaduna</div>
               <div className="absolute top-[64%] left-[42%] w-2 h-2 bg-mat-dark-500 rounded-full" />
-              <div className="absolute top-[67%] left-[44%] font-mono text-[8px] text-mat-dark-400">Garki</div>
+              <div className="absolute top-[67%] left-[44%] font-mono text-[8px] text-mat-dark-400">Nasarawa</div>
               <div className="absolute top-[42%] left-[33%] w-2 h-2 bg-mat-dark-500 rounded-full" />
-              <div className="absolute top-[42%] left-[16%] font-mono text-[8px] text-mat-dark-400">Gwarinpa</div>
+              <div className="absolute top-[42%] left-[16%] font-mono text-[8px] text-mat-dark-400">Niger State</div>
               <div className="absolute top-[70%] left-[24%] w-2 h-2 bg-mat-dark-500 rounded-full" />
-              <div className="absolute top-[73%] left-[25%] font-mono text-[8px] text-mat-dark-400">Idu Industrial</div>
+              <div className="absolute top-[73%] left-[25%] font-mono text-[8px] text-mat-dark-400">Kogi</div>
             </div>
 
             <div className="space-y-3">

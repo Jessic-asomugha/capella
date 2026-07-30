@@ -23,16 +23,19 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
       <div className="bg-mat-dark-950 border-b border-mat-dark-800 hidden md:block">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 h-9 flex items-center justify-end gap-5">
           <a
-            href="tel:+234800CAPELLA"
+            href="tel:+2347062062322"
             className="flex items-center gap-1.5 text-mat-dark-300 hover:text-white transition-colors text-[11px] font-sans"
           >
             <Phone className="w-3 h-3 text-mat-blue-500" />
-            <span>+234 (0) 800-CAPELLA</span>
+            <span>+234 706 206 2322</span>
           </a>
           <span className="text-mat-dark-700 text-xs">|</span>
-          <span className="text-mat-dark-400 text-[11px] font-sans">
-            dispatch@capellaglobal.com
-          </span>
+          <a
+            href="mailto:info@capella.com.ng"
+            className="text-mat-dark-400 hover:text-white transition-colors text-[11px] font-sans"
+          >
+            info@capella.com.ng
+          </a>
         </div>
       </div>
 

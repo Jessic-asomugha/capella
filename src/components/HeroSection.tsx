@@ -8,9 +8,9 @@ interface HeroSectionProps {
 
 export default function HeroSection({ setActiveTab }: HeroSectionProps) {
   const pillars = [
-    { icon: ShieldCheck, label: "Unadulterated AGO", sub: "Triple-filtered, purity tested" },
-    { icon: Gauge,       label: "Metered Delivery",  sub: "Sealed digital meter tickets" },
-    { icon: Clock,       label: "24 / 7 Dispatch",   sub: "Emergency standby fleet"       },
+    { icon: ShieldCheck, label: "Registered Company", sub: "Registered Nigerian company" },
+    { icon: Gauge,       label: "Experienced Team",   sub: "Experienced management & workforce" },
+    { icon: Clock,       label: "Reliable Logistics", sub: "Competitive, customer-focused service" },
   ];
 
   return (
@@ -40,7 +40,7 @@ export default function HeroSection({ setActiveTab }: HeroSectionProps) {
             </h1>
 
             <p className="font-sans text-mat-dark-200 text-base leading-relaxed max-w-lg mat-fade-up-d2">
-              Capella Integrated Global delivers premium-grade, unadulterated AGO directly to your facility — ensuring your operations never stop.
+              Capella Integrated Global delivers diesel supply, bulk fuel delivery, and procurement & logistics to your facility — ensuring your operations never stop.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2 mat-fade-up-d3">

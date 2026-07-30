@@ -9,75 +9,40 @@ interface ServicesTabProps {
 export default function ServicesTab({ setActiveTab }: ServicesTabProps) {
   const services = [
     {
-      id: "retail-diesel",
-      title: "Retail Diesel Supply",
-      image: "/src/assets/images/retail_diesel_1784144486104.jpg",
-      badge: "Commercial & Residential",
-      desc: "Regular and scheduled drops for offices, estates, luxury residences, and small-to-medium business generators.",
+      id: "diesel-ago-supply",
+      title: "Diesel (AGO) Supply",
+      image: "/src/assets/images/diesel_supply_hero_1784144456700.jpg",
+      badge: "Fuel Supply",
+      desc: "Supply of premium Automotive Gas Oil (AGO) for businesses, industries, estates, and institutions across Abuja and neighboring states.",
       details: [
-        "Deliveries starting from 500 Litres upwards",
-        "Calibrated truck-mounted digital meters",
-        "Purity tested and double-filtered at discharge",
-        "Perfect for soundproof backup generators (20kVA – 150kVA)",
+        "Regular and scheduled deliveries",
+        "Serving offices, estates, and small-to-medium generators",
       ],
       client: "Offices, Estates, Malls, Supermarkets",
     },
     {
-      id: "bulk-delivery",
+      id: "bulk-fuel-delivery",
       title: "Bulk Fuel Delivery",
       image: "/src/assets/images/bulk_diesel_truck_1784144470553.jpg",
       badge: "High-Volume Logistics",
-      desc: "High-volume supply via our pedigree bulk fuel tankers directly to factories, construction sites, manufacturing plants, and large hotel installations.",
+      desc: "Safe and timely bulk fuel transportation directly to factories, construction sites, and large installations.",
       details: [
-        "Consignments from 10,000 to 45,000 Litres",
-        "Direct-from-depot wholesale pricing index",
-        "Quality test certificate provided on delivery",
-        "Ideal for heavy duty aggregates & storage reservoirs",
+        "Direct-to-site tanker delivery",
+        "Suited to large-volume operational needs",
       ],
       client: "Industrial Plants, Large Hotels, Construction Sites",
     },
     {
-      id: "oil-gas-logistics",
-      title: "Oil & Gas Logistics",
+      id: "procurement-logistics",
+      title: "Procurement & Logistics",
       image: "/src/assets/images/oil_gas_logistics_1784144502095.jpg",
       badge: "Supply Chain Operations",
-      desc: "End-to-end transportation, bridging, and distribution network management for petroleum products across Nigerian supply corridors.",
+      desc: "Efficient sourcing and transportation of petroleum-related products, backed by a vetted logistics network.",
       details: [
-        "Vetted and fully tracked logistics fleet",
-        "Strict adherence to HSE protocols",
-        "Experienced logistics coordinators & certified drivers",
-        "Terminal-to-terminal product bridging and hauling",
+        "End-to-end sourcing and delivery coordination",
+        "Reliable supply chain management for corporate clients",
       ],
-      client: "Independents, Depot Operators, Multinationals",
-    },
-    {
-      id: "emergency-delivery",
-      title: "Emergency Delivery",
-      image: "/src/assets/images/emergency_delivery_1784144518527.jpg",
-      badge: "Critical 24/7 Backup",
-      desc: "Rapid-response fuel dispatch for critical backup infrastructure like hospitals, data centres, and cold storage facilities experiencing sudden fuel depletion.",
-      details: [
-        "Guaranteed priority dispatch within Abuja FCT",
-        "Round-the-clock emergency telephone hotline support",
-        "Self-powered rapid discharge pump systems",
-        "Pre-allocated emergency response standby units",
-      ],
-      client: "Hospitals, Data Centres, Telecom Sites",
-    },
-  ];
-
-  const testimonials = [
-    {
-      quote: "Capella has completely solved our fuel supply anxieties. In our healthcare facility, a power outage is life-threatening. Their unadulterated AGO has kept our backup systems running without a single filter clog for over two years.",
-      author: "Dr. Aliyu Mohammed",
-      role: "Director of Clinical Operations",
-      org: "Prime Care Hospital, Abuja",
-    },
-    {
-      quote: "With a fleet of heavy earthmoving equipment, fuel theft and inaccurate meter measurements were costing us millions. Capella's transparent meter ticketing has saved us over 15% on monthly diesel overhead.",
-      author: "Engr. Sandra Okafor",
-      role: "Project Manager",
-      org: "Apex Construction & Infrastructure",
+      client: "Independents, Depot Operators, Corporate Clients",
     },
   ];
 
@@ -140,40 +105,6 @@ export default function ServicesTab({ setActiveTab }: ServicesTabProps) {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Testimonials — dark band */}
-      <section className="relative py-20 bg-mat-dark-900 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src="/src/assets/images/energy_partners_1784144533028.jpg" alt="" className="w-full h-full object-cover opacity-15" />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <p className="mat-eyebrow font-display font-bold text-xs uppercase tracking-[0.22em] text-mat-blue-400 mx-auto items-center">
-              Testimonials
-            </p>
-            <h3 className="font-display font-black text-3xl sm:text-4xl text-white mt-5 tracking-tight">
-              Trusted by Abuja's Top Leaders
-            </h3>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {testimonials.map((t, i) => (
-              <div key={i} className="bg-mat-dark-800 border border-mat-dark-700 p-8 rounded-sm flex flex-col justify-between gap-6 hover:border-mat-blue-500 transition-colors">
-                <p className="font-sans text-sm text-mat-dark-200 italic leading-relaxed">"{t.quote}"</p>
-                <div className="flex gap-3.5 items-center border-t border-mat-dark-700 pt-5">
-                  <div className="w-11 h-11 bg-mat-blue-500 rounded-sm text-white flex items-center justify-center font-display font-black text-base">
-                    {t.author.split(" ").pop()?.[0]}
-                  </div>
-                  <div>
-                    <h4 className="font-display font-bold text-sm text-white uppercase tracking-wide">{t.author}</h4>
-                    <p className="font-sans text-[11px] text-mat-dark-400 mt-0.5">{t.role} — <span className="text-mat-blue-400 font-semibold">{t.org}</span></p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

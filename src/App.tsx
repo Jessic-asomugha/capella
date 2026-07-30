@@ -18,7 +18,6 @@ export default function App() {
   }, [activeTab]);
 
   const industries = [
-<<<<<<< HEAD
     { title: "Oil & Gas",              desc: "Logistics and supply for petroleum operations across Nigerian corridors.",         icon: Zap     },
     { title: "Construction Companies", desc: "Direct on-site deliveries fueling heavy equipment and generator banks.",         icon: Truck   },
     { title: "Manufacturing Industries", desc: "Scheduled bulk supply matching complex production duty cycles.",              icon: Factory },
@@ -35,44 +34,33 @@ export default function App() {
     { title: "Agricultural Companies", desc: "Farming and agribusiness operations with energy-intensive needs.",              icon: Factory },
     { title: "Mining Companies",       desc: "Extractive industries requiring heavy equipment power solutions.",               icon: Truck   },
     { title: "Churches & Religious",    desc: "Places of worship requiring reliable backup power systems.",                      icon: ShieldCheck },
-=======
-    { title: "Oil & Gas",       desc: "Logistics and supply for petroleum operations across Nigerian corridors.",         icon: Zap     },
-    { title: "Hospitals",       desc: "Reliable power for critical medical facilities and life-support systems.",          icon: ShieldCheck },
-    { title: "Manufacturing",   desc: "Scheduled bulk supply matching complex production duty cycles.",                    icon: Factory },
->>>>>>> 894f2fca589e93eb1b804c7524586f4c940e8bdb
   ];
 
   const services = [
     {
+      title: "Diesel (AGO) Supply",
+      image: "/src/assets/images/diesel_supply_hero_1784144456700.jpg",
+      desc: "Supply of premium Automotive Gas Oil (AGO) for businesses, industries, estates, and institutions across Abuja and neighboring states.",
+      points: ["Regular and scheduled deliveries", "Serving offices, estates, and industrial sites"],
+    },
+    {
       title: "Bulk Fuel Delivery",
       image: "/src/assets/images/bulk_diesel_truck_1784144470553.jpg",
-      desc: "High-volume supply via our pedigree bulk tankers directly to factories, construction sites, and large installations.",
-      points: ["10,000 to 45,000 Litres per consignment", "Direct-from-depot wholesale pricing"],
+      desc: "Safe and timely bulk fuel transportation directly to customer locations for large-volume operational needs.",
+      points: ["Direct-to-site tanker delivery", "Suited to factories, construction sites, and large installations"],
     },
     {
-      title: "Oil & Gas Logistics",
+      title: "Procurement & Logistics",
       image: "/src/assets/images/oil_gas_logistics_1784144502095.jpg",
-      desc: "End-to-end transportation, bridging, and distribution network management for petroleum products.",
-      points: ["Vetted and fully tracked logistics fleet", "Terminal-to-terminal product bridging"],
-    },
-    {
-      title: "Emergency Delivery",
-      image: "/src/assets/images/emergency_delivery_1784144518527.jpg",
-      desc: "Rapid-response fuel dispatch for critical backup infrastructure experiencing sudden fuel depletion.",
-      points: ["Priority dispatch within Abuja FCT", "24/7 emergency hotline support"],
+      desc: "Efficient sourcing and transportation of petroleum-related products, backed by a vetted logistics network.",
+      points: ["End-to-end sourcing and delivery coordination", "Reliable supply chain management for corporate clients"],
     },
   ];
 
   const whyUs = [
-<<<<<<< HEAD
     { title: "Professionalism & Integrity", desc: "We deliver complete business solutions backed by professionalism, integrity, and timely execution." },
     { title: "Customer-Focused Service", desc: "Our focus is building lasting relationships through quality service and dependable performance." },
     { title: "Reliable Logistics", desc: "Experienced management and professional workforce ensuring competitive pricing and reliable delivery." },
-=======
-    { title: "Triple Filtration Pipeline", desc: "Fuel is filtered at terminal collection, tanker loading, and final discharge to eradicate water and rust sediments." },
-    { title: "Meter Verification Security", desc: "Delivery trucks feature sealed positive-displacement meters alongside manual dip measurements to confirm exact volume." },
-    { title: "Federal Regulatory Compliance", desc: "Fully registered and licensed with NMDPRA for maximum peace of mind." },
->>>>>>> 894f2fca589e93eb1b804c7524586f4c940e8bdb
   ];
 
   return (
@@ -96,7 +84,6 @@ export default function App() {
                     Who We Serve
                   </h2>
                   <p className="font-sans text-mat-dark-400 text-sm mt-4 leading-relaxed">
-<<<<<<< HEAD
                     Across Abuja (FCT), Kaduna, Nasarawa, Niger State, and Kogi. International partnerships available upon request.
                   </p>
                 </div>
@@ -109,20 +96,6 @@ export default function App() {
                       </div>
                       <h3 className="font-display font-bold text-mat-dark-800 text-sm uppercase tracking-wide mb-2">{title}</h3>
                       <p className="font-sans text-xs text-mat-dark-400 leading-relaxed">{desc}</p>
-=======
-                    Across Abuja (FCT), Kaduna, Nasarawa, Niger State, and Kogi.
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {industries.map(({ title, desc, icon: Icon }, i) => (
-                    <div key={i} className="mat-card p-7 group">
-                      <div className="w-12 h-12 rounded-sm bg-mat-blue-50 flex items-center justify-center mb-5 group-hover:bg-mat-blue-500 transition-colors duration-300">
-                        <Icon className="w-5 h-5 text-mat-blue-500 group-hover:text-white transition-colors duration-300" />
-                      </div>
-                      <h3 className="font-display font-bold text-mat-dark-800 text-base uppercase tracking-wide mb-2">{title}</h3>
-                      <p className="font-sans text-sm text-mat-dark-400 leading-relaxed">{desc}</p>
->>>>>>> 894f2fca589e93eb1b804c7524586f4c940e8bdb
                     </div>
                   ))}
                 </div>
@@ -225,35 +198,7 @@ export default function App() {
               </div>
             </section>
 
-            {/* 6. Testimonial */}
-            <section className="relative py-24 bg-mat-dark-900 overflow-hidden">
-              <div className="absolute inset-0">
-                <img src="/src/assets/images/energy_partners_1784144533028.jpg" alt="" className="w-full h-full object-cover opacity-15" />
-              </div>
-              <div className="relative max-w-4xl mx-auto px-6 lg:px-10 text-center">
-                <p className="mat-eyebrow font-display font-bold text-xs uppercase tracking-[0.22em] text-mat-blue-400 mx-auto items-center">
-                  Testimonial
-                </p>
-                <blockquote className="mt-8 space-y-8">
-                  <p className="font-display font-medium text-2xl sm:text-3xl text-white leading-relaxed tracking-tight">
-                    "Capella has completely solved our fuel supply anxieties. In our healthcare facility, a power outage is not just inconvenient—it is life-threatening. Their unadulterated AGO has kept our backup systems running without a single filter clog for over two years."
-                  </p>
-                  <footer className="flex items-center justify-center gap-4">
-                    <div className="w-12 h-12 bg-mat-blue-500 rounded-sm text-white flex items-center justify-center font-display font-black text-base">
-                      M
-                    </div>
-                    <div className="text-left">
-                      <div className="font-display font-bold text-white text-sm uppercase tracking-wide">Dr. Aliyu Mohammed</div>
-                      <div className="font-sans text-xs text-mat-dark-400 mt-0.5">
-                        Director of Clinical Operations — <span className="text-mat-blue-400 font-semibold">Prime Care Hospital, Abuja</span>
-                      </div>
-                    </div>
-                  </footer>
-                </blockquote>
-              </div>
-            </section>
-
-            {/* 7. Final CTA */}
+            {/* 6. Final CTA */}
             <section className="py-24 bg-mat-blue-600">
               <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center space-y-6">
                 <h2 className="font-display font-black text-4xl sm:text-5xl text-white tracking-tight leading-tight">
